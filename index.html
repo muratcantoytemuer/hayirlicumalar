@@ -2,73 +2,59 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Hayırlı Cumalar</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      width: 100%;
-      height: 100%;
-      font-family: 'Quicksand', sans-serif;
-      overflow: hidden;
-      background: linear-gradient(to bottom, #e3eaf4, #fddede);
+      font-family: 'Comfortaa', cursive;
+      background: linear-gradient(to bottom, #cce3dc, #eacfd6), url('https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1400&q=80') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
       flex-direction: column;
       text-align: center;
-      padding: 20px;
+      color: white;
     }
 
     h1 {
       font-size: 2.2em;
-      color: #333;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.4em;
+      text-shadow: 1px 1px 4px #333;
     }
 
     p {
-      font-size: 1.3em;
-      color: #555;
+      font-size: 1.2em;
       max-width: 90%;
       line-height: 1.6em;
+      text-shadow: 1px 1px 3px #333;
     }
 
     .emoji {
       position: absolute;
-      font-size: 2em;
-      animation: float 10s infinite;
-      opacity: 0.7;
+      font-size: 1.8em;
+      animation: floatDown linear infinite;
+      pointer-events: none;
     }
 
-    @keyframes float {
+    @keyframes floatDown {
       0% {
-        transform: translateY(100vh) rotate(0deg);
+        transform: translateY(-100vh) rotate(0deg);
         opacity: 0;
       }
       50% {
-        opacity: 0.8;
+        opacity: 1;
       }
       100% {
-        transform: translateY(-120vh) rotate(360deg);
+        transform: translateY(120vh) rotate(360deg);
         opacity: 0;
-      }
-    }
-
-    /* Responsive Text */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.8em;
-      }
-
-      p {
-        font-size: 1.1em;
       }
     }
   </style>
@@ -77,17 +63,17 @@
   <h1>Hayırlı Cumalar, Murat!</h1>
   <p>Gönlün gökyüzü gibi ferah, duaların kabul, çayların demli olsun! 🌸☕</p>
 
-  <!-- Emojis -->
+  <!-- Fliegende Emojis -->
   <script>
-    const emojis = ["🕋", "📿", "🕌", "✨", "☕", "🌙"];
-    for (let i = 0; i < 30; i++) {
-      const emoji = document.createElement("div");
-      emoji.className = "emoji";
-      emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-      emoji.style.left = Math.random() * 100 + "vw";
-      emoji.style.animationDuration = 8 + Math.random() * 5 + "s";
-      emoji.style.fontSize = 1.5 + Math.random() * 1.5 + "em";
-      document.body.appendChild(emoji);
+    const emojis = ["🕋", "📿", "🕌", "✨", "🌙", "☕", "🌸"];
+    for (let i = 0; i < 25; i++) {
+      const el = document.createElement("div");
+      el.className = "emoji";
+      el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      el.style.left = Math.random() * 100 + "vw";
+      el.style.animationDuration = 3 + Math.random() * 7 + "s";
+      el.style.fontSize = 1 + Math.random() * 2 + "em";
+      document.body.appendChild(el);
     }
   </script>
 </body>
